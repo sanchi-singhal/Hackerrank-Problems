@@ -1,0 +1,14 @@
+
+
+https://www.hackerrank.com/challenges/die-hard-3/problem?isFullScreen=true
+
+
+
+
+
+
+def solve(a, b, c):
+    if(c<=a or c<=b) and(c%math.gcd(a,b)==0):
+        return "YES"
+    else:
+        return "NO"
