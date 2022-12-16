@@ -1,0 +1,29 @@
+Summing the N series
+
+
+
+https://www.hackerrank.com/challenges/summing-the-n-series/problem?isFullScreen=true
+
+
+OPTIMIZED
+
+def summingSeries(n):
+    # Write your code here
+    s=n*n
+    y=pow(10,9)+7
+    return s%y
+
+
+
+
+TLE
+
+def summingSeries(n):
+    # Write your code here
+    s=0
+    for i in range(1,n+1):
+        m=i*i-pow(i-1,2)
+        s=s+m
+    # print(s)
+    y=pow(10,9)+7
+    return s%y
