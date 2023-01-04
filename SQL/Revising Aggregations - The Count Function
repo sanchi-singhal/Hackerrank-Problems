@@ -1,0 +1,13 @@
+Revising Aggregations - The Count Function
+
+
+
+https://www.hackerrank.com/challenges/revising-aggregations-the-count-function/problem?isFullScreen=true
+
+
+
+
+
+select count(DISTRICT)
+from CITY
+where POPULATION>100000;
