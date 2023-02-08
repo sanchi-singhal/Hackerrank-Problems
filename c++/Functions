@@ -1,0 +1,16 @@
+Functions
+
+
+
+https://www.hackerrank.com/challenges/c-tutorial-functions/problem?isFullScreen=true
+
+
+
+int max_of_four(int a,int b,int c,int d)
+{
+    int m,n,p;
+    m=a>b?a:b;
+    n=m>c?m:c;
+    p=n>d?n:d;
+    return p;
+}
