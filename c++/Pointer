@@ -1,0 +1,14 @@
+Pointer
+
+
+https://www.hackerrank.com/challenges/c-tutorial-pointer/problem?isFullScreen=true
+
+
+void update(int *a,int *b) {
+    int c;
+    c=*a;
+    *a=*a+(*b);
+    *b=abs(c-*b);
+    
+    // Complete this function    
+}
