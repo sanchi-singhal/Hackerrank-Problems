@@ -1,0 +1,78 @@
+Snakes and Ladders: The Quickest Way Up
+https://www.hackerrank.com/challenges/the-quickest-way-up/problem?isFullScreen=true
+
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+#
+# Complete the 'quickestWayUp' function below.
+#
+# The function is expected to return an INTEGER.
+# The function accepts following parameters:
+#  1. 2D_INTEGER_ARRAY ladders
+#  2. 2D_INTEGER_ARRAY snakes
+#
+
+def quickestWayUp(ladders, snakes):
+    for x,y in snakes:
+        if(x==100):
+            return -1
+    board=[0]*101
+    for x,y in snakes:
+        board[x]=y
+    for x,y in ladders:
+        board[x]=y
+    status=[-1]*101
+    status[1]=0
+    q=[1]
+    # print(board)
+    while(q):
+        # print(status,q)
+        if(status[100]!=-1):
+            return status[100]
+        # print(status,q)
+        k=q.pop(0)
+        for i in range(1,7):
+            if(k+i<101):
+                if(board[k+i]==0):
+                    if(status[k+i]==-1):
+                        status[k+i]=status[k]+1
+                        q.append(k+i)
+                else:
+                    if(status[board[k+i]]==-1):
+                        status[board[k+i]]=status[k]+1
+                        q.append(board[k+i])
+    return -1
+    
+    # Write your code here
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    t = int(input().strip())
+
+    for t_itr in range(t):
+        n = int(input().strip())
+
+        ladders = []
+
+        for _ in range(n):
+            ladders.append(list(map(int, input().rstrip().split())))
+
+        m = int(input().strip())
+
+        snakes = []
+
+        for _ in range(m):
+            snakes.append(list(map(int, input().rstrip().split())))
+
+        result = quickestWayUp(ladders, snakes)
+
+        fptr.write(str(result) + '\n')
+
+    fptr.close()
